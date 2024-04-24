@@ -5,11 +5,13 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     'node_modules/flowbite-react/lib/esm/**/*.js',
   ],
+  darkMode: "class",
   theme: {
     extend: {},
   },
   plugins: [ 
     require('flowbite/plugin'),
+    require('tailwind-scrollbar'),
   ],
 }
 

@@ -1,3 +1,4 @@
+# Lapost.net
 # Logs
 .env
 logs
@@ -28,3 +29,5 @@ dist-ssr
 
 # Contentlayer
 .contentlayer
+
+
