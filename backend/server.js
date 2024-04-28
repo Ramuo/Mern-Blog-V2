@@ -7,7 +7,8 @@ import {notFound, errorHandler} from "./middlewares/errorMiddleware.js";
 
 
 import userRoute from "./routes/userRoute.js";
-import postRoute from "./routes/postRoute.js"
+import postRoute from "./routes/postRoute.js";
+import commentRoute from "./routes/commentRoute.js"
 
 
  const port = process.env.PORT || 5000;
@@ -29,6 +30,7 @@ app.use(cookieParser());
  //ROUTES
 app.use('/api/users', userRoute);
 app.use('/api/posts', postRoute);
+app.use('/api/comments', commentRoute);
 
 
 //STATIC ROUTE

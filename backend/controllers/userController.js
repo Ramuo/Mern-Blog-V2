@@ -119,20 +119,6 @@ const google = asyncHandler(async (req, res) => {
     throw new Error("Une erreur s'est produite avec google");  
 });
 
-//@desc     Get user by ID
-//@route    GET /api/users/:id
-//@access   Private
-const getUserById = asyncHandler(async(req, res) => {
-    const user = await User.findById(req.params.id).select('-password');
-
-    if(user){
-        res.status(200).json(user)
-    }else{
-        res.status(404);
-        throw new Error('Utilisateur non trouvé');
-    }
-});
-
 
 //@desc     Update user profile
 //@route    PUT /api/users/profile
@@ -235,6 +221,20 @@ const getUsers = asyncHandler(async(req, res)=>{
         res.status(404);
         throw new Error("You are not allowed to see all users");
       }
+});
+
+//@desc     Get user by ID
+//@route    GET /api/users/:id
+//@access   Public
+const getUserById = asyncHandler(async(req, res) => {
+    const user = await User.findById(req.params.id).select('-password');
+
+    if(user){
+        res.status(200).json(user)
+    }else{
+        res.status(404);
+        throw new Error('Utilisateur non trouvé');
+    }
 });
 
 
