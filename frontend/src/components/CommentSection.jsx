@@ -130,6 +130,7 @@ const CommentSection = ({postId}) => {
             )}
 
             {userInfo && (
+                <>
                 <form 
                 className='border border-teal-500 rounded-md p-3'
                 onSubmit={submitHandler}
@@ -152,12 +153,13 @@ const CommentSection = ({postId}) => {
                             Envoyer
                         </Button>
                     </div>
-                    {commentError && (
+                </form>
+                {commentError && (
                     <Alert color="failure" className='mt-5'>
                         {commentError}
                     </Alert>
-                    )}
-                </form>
+                )}
+                </>
             ) }
             {comments.length === 0 ? (
                 <p className='text-sm my-5'>Aucun commentaire</p>

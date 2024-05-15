@@ -75,7 +75,6 @@ const CreatePostPage = () => {
 
         try {
             const res = await createpost(formData).unwrap();
-            // navigate(`/post/${res.slug}`);  
             navigate(`/dashboard?tab=posts`);  
             toast.success('Publication Créée avec succès');      
         } catch (err) {
@@ -137,12 +136,12 @@ const CreatePostPage = () => {
                 </Button>
             </div>
             {imageUploadError && <Alert color='failure'>{imageUploadError}</Alert>}
-              {formData.image && (
-                  <img
-                  src={formData.image}
-                  alt='upload'
-                  className='w-full h-72 object-cover'
-                />
+            {formData.image && (
+                <img
+                src={formData.image}
+                alt='upload'
+                className='w-full h-72 object-cover'
+              />
             )}
             <ReactQuill
             theme='snow'

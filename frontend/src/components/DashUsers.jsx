@@ -58,7 +58,7 @@ const DashUsers = () => {
 
   const deleteUser = async () => {
     
-  }
+  } 
 
   return (
     <div className='table-auto overflow-x-scroll md:mx-auto p-3 scrollbar scrollbar-track-slate-100 scrollbar-thumb-slate-300 
